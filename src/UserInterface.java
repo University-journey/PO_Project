@@ -6,7 +6,7 @@ public class UserInterface {
         System.out.println("Welcome to the Caesar cipher and Morse code program!");
     }
 
-    public int chooseCipher(int options) {
+    public int chooseOption(int options) {
         System.out.println("Please choose the cipher you want to use:");
         System.out.println("1. Caesar cipher");
         System.out.println("2. Morse code");

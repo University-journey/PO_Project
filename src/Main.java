@@ -1,6 +1,5 @@
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -33,9 +32,10 @@ public class Main {
 
         outerLoop: while(true){
 //            ui.render();
-            int num = ui.chooseCipher(3);
+            int num = ui.chooseOption(3);
             switch(num) {
                 case 1:
+                    // Przypadek, gdzie uzytkownik wybiera szyfr cezara
                     System.out.println("Please enter the text you want to encrypt:");
                     String text = scanner.nextLine();
                     Szyfr_Cezara k = new Szyfr_Cezara(text);
@@ -43,9 +43,11 @@ public class Main {
                     k.decipher(shift);
                     break;
                 case 2:
+                    // Przypadek, gdzie uztkownik wybiera kod Morse'a
                     System.out.println("Please enter the text you want to encrypt:");
                     break;
                 case 3:
+                    // Przypadek, gdzie uzytkownik wybiera wyjscie
                     System.out.println("Goodbye! ");
                     break outerLoop;
                 default:
