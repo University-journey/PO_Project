@@ -1,5 +1,6 @@
 public class SzyfrCezara {
-    private String text;
+
+    protected String text;
 
     public String getText() {
         return text;
