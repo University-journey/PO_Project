@@ -14,6 +14,6 @@ public class Main {
         }
         // dopisek KK
         // Hi
-        //Bye
+        //Bye (jk)
     }
 }
