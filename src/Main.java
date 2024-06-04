@@ -38,7 +38,7 @@ public class Main {
                     // Przypadek, gdzie uzytkownik wybiera szyfr cezara
                     System.out.println("Please enter the text you want to encrypt:");
                     String text = scanner.nextLine();
-                    Szyfr_Cezara k = new Szyfr_Cezara(text);
+                    SzyfrCezara k = new SzyfrCezara(text);
                     k.cipher(shift);
                     k.decipher(shift);
                     break;
