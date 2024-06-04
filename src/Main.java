@@ -1,23 +1,62 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.Scanner;
+
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+    private static final String setting_file = "src/settings.properties";
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-        // Hello
+        Properties settings = new Properties();
+        int shift = 0;
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        try {
+            settings.load(new FileInputStream(setting_file));
+            shift = Integer.parseInt(settings.getProperty("CEZAR_SHIFT"));
+        } catch (IOException e) {
+            System.out.println("Nie można wczytać pliku konfiguracyjnego: " + e.getMessage());
+            return;
+        } catch (NumberFormatException e) {
+            System.out.println("Błąd w formacie danych konfiguracyjnych: " + e.getMessage());
+            return;
         }
-        // dopisek KK
-        // Hittt
-        Szyfr_Cezara k = new Szyfr_Cezara("abcdefg");
-        k.cipher(24);
-        k.decipher(24);
+
+
+        // Dodaje interfejs uzytkownika
+        UserInterface ui = new UserInterface();
+        ui.welcome();
+        Scanner scanner = new Scanner(System.in);
+        // Pobieram dane z settings
+
+        outerLoop: while(true){
+//            ui.render();
+            int num = ui.chooseCipher(3);
+            switch(num) {
+                case 1:
+                    System.out.println("Please enter the text you want to encrypt:");
+                    String text = scanner.nextLine();
+                    Szyfr_Cezara k = new Szyfr_Cezara(text);
+                    k.cipher(shift);
+                    k.decipher(shift);
+                    break;
+                case 2:
+                    System.out.println("Please enter the text you want to encrypt:");
+                    break;
+                case 3:
+                    System.out.println("Goodbye! ");
+                    break outerLoop;
+                default:
+                    System.out.println("Please enter a valid number");
+            }
+
+
+
+        }
+//        Szyfr_Cezara k = new Szyfr_Cezara("abcdefg");
+//        k.cipher(24);
+//        k.decipher(24);
     }
 }
