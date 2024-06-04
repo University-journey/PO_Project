@@ -1,5 +1,11 @@
-public class Szyfr_Cezara {
-    private String text;
+public class SzyfrCezara {
+
+    protected String text;
+
+    public String getText() {
+        return text;
+    }
+
     public void cipher(int shift){
         String modified_text = "";
         shift %= 26;
@@ -8,6 +14,7 @@ public class Szyfr_Cezara {
             if(x > 'z'){
                 x = (char) (text.charAt(i) + shift - 26);
             }
+            if(text.charAt(i) == ' ') x = ' ';
             modified_text += x;
         }
         text = modified_text;
@@ -18,7 +25,7 @@ public class Szyfr_Cezara {
         shift = 26 - shift;
         cipher(shift);
     }
-    public Szyfr_Cezara(String s){
+    public SzyfrCezara(String s){
         text = s;
     }
 }
