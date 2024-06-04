@@ -1,3 +1,4 @@
 git init
 git clone https://github.com/University-journey/PO_common_project.git
 cd PO_common_project
+git remote add origin https://github.com/University-journey/PO_common_project.git
