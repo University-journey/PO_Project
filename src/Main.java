@@ -18,5 +18,8 @@ public class Main {
         // Hi
         //Bye (jk)
         // Hittt
+        Szyfr_Cezara k = new Szyfr_Cezara("abcdefg");
+        k.cipher(24);
+        k.decipher(24);
     }
 }
