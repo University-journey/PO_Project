@@ -22,4 +22,10 @@ public class SzyfrCezaraTest {
         a.cipher(3);
         assertEquals(a.getText(), "defg");
     }
+    @Test
+    void ignorespaces(){
+        SzyfrCezara a = new SzyfrCezara("abc cba");
+        a.cipher(2);
+        assertEquals(a.getText(), "cde edc");
+    }
 }

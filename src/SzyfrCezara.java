@@ -13,6 +13,7 @@ public class SzyfrCezara {
             if(x > 'z'){
                 x = (char) (text.charAt(i) + shift - 26);
             }
+            if(text.charAt(i) == ' ') x = ' ';
             modified_text += x;
         }
         text = modified_text;
