@@ -1,4 +1,4 @@
-public class Szyfr_Cezara {
+public class SzyfrCezara {
     private String text;
 
     public String getText() {
@@ -23,7 +23,7 @@ public class Szyfr_Cezara {
         shift = 26 - shift;
         cipher(shift);
     }
-    public Szyfr_Cezara(String s){
+    public SzyfrCezara(String s){
         text = s;
     }
 }
