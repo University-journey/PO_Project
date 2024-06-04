@@ -17,7 +17,7 @@ public class Main {
         // dopisek KK
         // Hittt
         Szyfr_Cezara k = new Szyfr_Cezara("abcdefg");
-        k.cipher(24);
+        k.cipher(26);
         k.decipher(24);
     }
 }

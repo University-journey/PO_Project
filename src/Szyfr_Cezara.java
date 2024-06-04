@@ -1,5 +1,10 @@
 public class Szyfr_Cezara {
     private String text;
+
+    public String getText() {
+        return text;
+    }
+
     public void cipher(int shift){
         String modified_text = "";
         shift %= 26;
