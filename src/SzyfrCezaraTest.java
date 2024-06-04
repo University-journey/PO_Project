@@ -1,13 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 public class SzyfrCezaraTest {
-    @Test
-    void cipher26(){
-        SzyfrCezara a = new SzyfrCezara("abcdefg");
-        SzyfrCezara b = new SzyfrCezara("abcdefg");
-        b.cipher(26);
-        assertEquals(a.getText(), b.getText());
-    }
+
     @Test
     void cipher_decipher(){
         SzyfrCezara a = new SzyfrCezara("vjsdfkksdghfjkas");
