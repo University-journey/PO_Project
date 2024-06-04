@@ -63,18 +63,21 @@ public class Hacker {
 
     public int znajdzPrzesuniecie() {
 
-        if (this.przesuniecie != null)
-            return this.przesuniecie;
+        if (this.przesuniecie == null) {
 
-        List<Character> najczestsze = this.literyWTekscieOdNajczestszych();
+            List<Character> najczestsze = this.literyWTekscieOdNajczestszych();
 
-        int sumaPrzesuniec = 0;
-        for (int i = 0; i < Hacker.dlugoscAlfabetu; ++i) {
-            sumaPrzesuniec += Hacker.literyWgCzestosci.get(i);
-            sumaPrzesuniec -= najczestsze.get(i);
-        }
+            int sumaPrzesuniec = 0;
+            for (int i = 0; i < Hacker.dlugoscAlfabetu; ++i) {
+                sumaPrzesuniec += Hacker.literyWgCzestosci.get(i);
+                sumaPrzesuniec -= najczestsze.get(i);
+            }
 
-        return (int)((sumaPrzesuniec+0.5) / Hacker.dlugoscAlfabetu);
+            this.przesuniecie = (int) ((sumaPrzesuniec + 0.5) / Hacker.dlugoscAlfabetu);
+
+        }//if
+
+        return this.przesuniecie;
 
     }//znajdzPrzesuniecie
 
