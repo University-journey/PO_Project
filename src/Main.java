@@ -45,6 +45,10 @@ public class Main {
                 case 2:
                     // Przypadek, gdzie uztkownik wybiera kod Morse'a
                     System.out.println("Please enter the text you want to encrypt:");
+                    String tekst = scanner.nextLine();
+                    MorseAlphabet t = new MorseAlphabet(tekst);
+                    t.encrypt();
+                    //t.decrypt;
                     break;
                 case 3:
                     // Przypadek, gdzie uzytkownik wybiera wyjscie
