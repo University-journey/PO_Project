@@ -68,7 +68,7 @@ public class MorseAlphabet {
                 encrypted += morseCode + " ";
             }
         }
-        return encrypted;
+        return encrypted.toString().trim();         // pozbycie się zbędnych spacji (do assertEquals)
     }
 
     public String decrypt() {
